@@ -14,7 +14,8 @@ const App = () => {
           <Route path='/' element={<Home />} />
           <Route path='/category' element={<CategorySelection />} />
           <Route path='/entry'>
-            <Route path='new' element ={<NewEntry />} />
+            {/* colon prefix makes it dynamic parameter */}
+            <Route path='new/:category' element ={<NewEntry />} />
           </Route>
           <Route path='*' element={<h3> Page not found</h3>} />
         </Routes>
