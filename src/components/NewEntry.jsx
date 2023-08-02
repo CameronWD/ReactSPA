@@ -1,16 +1,13 @@
 import React, { useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 
-const NewEntry = ({entries, setEntries}) => {
+const NewEntry = ({ addEntry }) => {
     const {category} = useParams()
     const [content, setContent] = useState('')
 
     function submit(e) {
         e.preventDefault()
-
-        const newEntry = {category, content}
-        // anytime manipulating an array we use the expansion operator
-        setEntries([ ...entries, newEntry])
+        addEntry(category, content)
     }
     
   return <>
